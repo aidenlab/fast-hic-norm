@@ -49,15 +49,9 @@ public class HiCTools {
 
         CommandLineParser parser = new CommandLineParser();
         HiCGlobals.useCache = false;
-        boolean help;
-        boolean version;
         parser.parse(argv);
-
-        if (parser.getAllPearsonsOption()) {
-            HiCGlobals.MAX_PEARSON_ZOOM = 1;
-        }
-        help = parser.getHelpOption();
-        version = parser.getVersionOption();
+        boolean help = parser.getHelpOption();
+        boolean version = parser.getVersionOption();
         HiCGlobals.printVerboseComments = parser.getVerboseOption();
 
         String[] args = parser.getRemainingArgs();

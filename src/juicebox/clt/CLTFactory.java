@@ -38,10 +38,7 @@ public class CLTFactory {
 
     // Commenting some out because we're not going to release all these when we release CLT
     private final static String[] commandLineToolUsages = {
-            PreProcessing.getBasicUsage(),
-            AddNorm.getBasicUsage(),
-            Pearsons.getBasicUsage(),
-            Eigenvector.getUsage(),
+            AddNorm.getBasicUsage()
     };
 
     public static void generalUsage() {
@@ -57,32 +54,10 @@ public class CLTFactory {
     }
 
     public static JuiceboxCLT getCLTCommand(String cmd) {
-
         cmd = cmd.toLowerCase();
-        if (cmd.equals("pre")) {
-            return new PreProcessing();
-        } else if (cmd.equals("addnorm")) {
+        if (cmd.equals("addnorm")) {
             return new AddNorm();
-        } else if (cmd.equals("bigwig")) {
-            return new BigWig();
-        } else if (cmd.equals("bintopairs")) {
-            return new BinToPairs();
-        } else if (cmd.equals("bptofrag")) {
-            return new BPToFragment();
-        } else if (cmd.equals("fragmenttobed")) {
-            return new FragmentToBed();
-        } else if (cmd.equals("pairstobin")) {
-            return new PairsToBin();
-        } else if (cmd.equals("pearsons")) {
-            return new Pearsons();
-        } else if (cmd.equals("eigenvector")) {
-            return new Eigenvector();
-        } else if (cmd.contains("librarycomplexity")) {
-            return new LibraryComplexity(cmd);
-        } else if (cmd.equals("statistics")) {
-            return new Statistics();
         }
-
         return null;
     }
 }
